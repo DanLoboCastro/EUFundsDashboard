@@ -20,17 +20,6 @@ df_selected = df[relevant_columns].copy()
 numeric_cols = ['eu_amount', 'total_amount', 'cofinancing_rate']
 df_selected[numeric_cols] = df_selected[numeric_cols].fillna(0)
 
-
-# Scale funding columns to millions
-#df_selected['eu_amount_million'] = (df_selected['eu_amount'] / 1000000).round(2)
-#df_selected['total_amount_million'] = (df_selected['total_amount'] / 1000000).round(2)
-
-# Format EU share as a percentage (rounded to 2 decimals)
-#df_selected['cofinancing_rate'] = (df_selected['cofinancing_rate']).round(2)
-
-# Drop original unscaled columns
-#df_selected = df_selected.drop(columns=['eu_amount', 'total_amount'])
-
 df_selected = df_selected.fillna({
     'category_of_region': 'Not Specified',
     'policy_objective_name': 'Not Specified',
